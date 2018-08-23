@@ -9,7 +9,8 @@ CREATE TABLE pessoas(
 	sexo ENUM('M','F'), 
 	peso DECIMAL(5,2),
 	altura DECIMAL(3,2), 
-	nacionalidade VARCHAR(20) DEFAULT 'Brasil', 		PRIMARY KEY (id)
+	nacionalidade VARCHAR(20) DEFAULT 'Brasil', 
+	PRIMARY KEY (id)
 )DEFAULT CHARSET = utf8;
 
 INSERT INTO pessoas 
