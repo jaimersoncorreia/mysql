@@ -111,10 +111,7 @@ INSERT INTO cursos VALUES
 ('4','PHP','Curso de PHP para Iniciantes','40','20','2015'),
 ('5','Java','Introduçao à Linguagem Java','40','29','2015'),
 ('6','MySQL','Banco de Dados MySQL','30','15','2016'),
-('7','Word','Curso completo de Word','40','30','2016'),
-('8','Sapateando','Danças Rítmicas','40','30','2018'),
-('9','Cozinha Árabe','Aprenda a fazer Kibe','40','30','2018'),
-('10','YouTuber','Gerar polêmica e ganhar inscritos','5','2','2018');
+('7','Word','Curso completo de Word','40','30','2016');
 
 UPDATE cursos
 SET nome = 'HTML5'
@@ -146,6 +143,27 @@ LIMIT 2;
 
 -- Apagando todos os registros da tabela
 TRUNCATE TABLE cursos;
+
+
+--	Exportando banco de dados
+mysqldump -u jaimerson -p cadastro > bkp_cadastro.sql
+
+--	(adicione as linha no bkp)
+CREATE DATABASE cadastro
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
+USE cadastro;
+--	Importando banco de dados
+mysql -u jaimerson -p < bkp_cadastro.sql
+_____________________________________________________________________
+
+--	Crescente
+SELECT * FROM cursos ORDER BY nome;
+--	Decrecente
+SELECT * FROM cursos ORDER BY nome DESC;
+
+
+
 
 --DDL	-> Data Definition Language
 --	CREATE DATABASE
